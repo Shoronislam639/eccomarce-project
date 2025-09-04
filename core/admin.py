@@ -7,7 +7,7 @@ class ProductImagesAdmin(admin.TabularInline):
     
 class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductImagesAdmin]
-    list_display=['user','title','product_image','price','feature','product_status']
+    list_display=['pid','user','title','product_image','price','featured','product_status','vendor','get_percentage']
     
     
     
@@ -16,7 +16,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class VendorAdmin(admin.ModelAdmin):
-    list_display=['title','vendor_image']
+    list_display=['title','vendor_image','vid']
 
 
 
@@ -50,7 +50,7 @@ admin.site.register(CartOrder,CartOrderAdmin)
 admin.site.register(CartOrderItems,CartOrderItemAdmin)
 admin.site.register(wishlist,WishlistAdmin)
 admin.site.register(Address,AddressAdmin)
-
+admin.site.register(ProductReviews,ProductReviewAdmin)
 
 
 
